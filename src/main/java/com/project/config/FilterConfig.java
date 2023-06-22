@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.GenericFilterBean;
 
 import com.project.filter.JWTValidationFilter;
-import com.project.session.Session;
+
 
 @Configuration
 public class FilterConfig {
@@ -16,7 +16,7 @@ public class FilterConfig {
 //	public static final String CUSTOMER_PATH = "/rooms/customer/*";
 //	public static final String ALL_PATH = "/rooms/*";
 	
-	private Session session = Session.getSession();
+	//private Session session = Session.getSession();
 	
 	@Bean
 	public FilterRegistrationBean<GenericFilterBean> jwtFilter(){
