@@ -11,23 +11,24 @@ public class Session {
 	private static Session session;
 	
 	static {
-		session = new Session();
+		session = new Session(0,"","","");
 	}
 	
 	public static Session getSession() {
 		return session;
 	}
-//	public Session() {
-//
-//	}
-//
-//	public Session(int userId, String email, String password, String role) {
-//
-//		this.userId = userId;
-//		this.email = email;
-//		this.password = password;
-//		this.role = role;
-//	}
+
+	public Session() {
+
+	}
+
+	public Session(int userId, String email, String password, String role) {
+
+		_userId = userId;
+		_email = email;
+		_password = password;
+		_role = role;
+	}
 
 	public int getUserId() {
 		return _userId;
