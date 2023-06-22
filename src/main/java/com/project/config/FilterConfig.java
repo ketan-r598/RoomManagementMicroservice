@@ -11,8 +11,8 @@ import com.project.session.Session;
 @Configuration
 public class FilterConfig {
 	
-	public static final String OWNERPATH = "/rooms/owner/*";
-	public static final String CUSTOMERPATH = "/rooms/customer/*";
+	public static final String OWNER_PATH = "/rooms/owner/*";
+	public static final String CUSTOMER_PATH = "/rooms/customer/*";
 	
 	private Session session = Session.getSession();
 	
@@ -22,11 +22,11 @@ public class FilterConfig {
 		filterRegistrationBean.setFilter(new JWTValidationFilter());
 		
 		if(session.getRole().equalsIgnoreCase("customer")) {
-			filterRegistrationBean.addUrlPatterns(CUSTOMERPATH);
+			filterRegistrationBean.addUrlPatterns(CUSTOMER_PATH);
 		} else if(session.getRole().equalsIgnoreCase("owner")){
-			filterRegistrationBean.addUrlPatterns(OWNERPATH);
+			filterRegistrationBean.addUrlPatterns(OWNER_PATH);
 		} else {
-			filterRegistrationBean.addUrlPatterns("");
+//			filterRegistrationBean.addUrlPatterns("");
 		}
 		
 		return filterRegistrationBean;
