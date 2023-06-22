@@ -6,12 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.GenericFilterBean;
 
 import com.project.filter.JWTValidationFilter;
-<<<<<<< HEAD
-
-@Configuration
-public class FilterConfig {
-	public static final String CONTACTS_PATH = "/admin/rooms/*";
-=======
 import com.project.session.Session;
 
 @Configuration
@@ -23,19 +17,11 @@ public class FilterConfig {
 //	public static final String ALL_PATH = "/rooms/*";
 	
 	private Session session = Session.getSession();
->>>>>>> ab7a1c5d0bbf3da33029ff9eb708f7500a50a491
 	
 	@Bean
 	public FilterRegistrationBean<GenericFilterBean> jwtFilter(){
 		FilterRegistrationBean<GenericFilterBean> filterRegistrationBean = new FilterRegistrationBean<>();
 		filterRegistrationBean.setFilter(new JWTValidationFilter());
-<<<<<<< HEAD
-		filterRegistrationBean.addUrlPatterns(CONTACTS_PATH);
-		return filterRegistrationBean;
-	}
-	
-}
-=======
 		filterRegistrationBean.addUrlPatterns(OWNER_PATH);
 
 		
@@ -54,4 +40,3 @@ public class FilterConfig {
 		return filterRegistrationBean;
 	}	
 }
->>>>>>> ab7a1c5d0bbf3da33029ff9eb708f7500a50a491
