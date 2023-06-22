@@ -39,7 +39,8 @@ public class JWTValidationFilter extends GenericFilterBean {
 		else {
 			// Bearer tokenValue
 			String token = authorization.substring(7);
-
+			System.out.println("I am here");
+			
 			try {
 
 				final Claims claims = Jwts
@@ -56,6 +57,11 @@ public class JWTValidationFilter extends GenericFilterBean {
 				String email = (String) claims.getSubject();
 				String password = (String) claims.get("password");
 				String role = (String) claims.get("role");
+				
+				System.out.println(userId);
+				System.out.println(email);
+				System.out.println(password);
+				System.out.println(role);
 				
 				session.setUserId(userId);
 				session.setEmail(email);
