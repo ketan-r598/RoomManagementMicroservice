@@ -16,34 +16,34 @@ import com.project.model.Room;
 import com.project.service.RoomService;
 
 @RestController
-@RequestMapping("/rooms")
+@RequestMapping("/rooms/")
 public class RoomController {
 
 	@Autowired
 	private RoomService service;
 	
-	@PostMapping("/owner/addRoom")
+	@PostMapping("owner/addRoom")
 	public void addRoom(@RequestBody Room room) {
 //		Session session = Session.getSession();
 		service.addRoom(room);
 	}
 	
-	@PutMapping("/owner/updateRoom")
+	@PutMapping("owner/updateRoom")
 	public void updateRoom(@RequestBody Room room) {
 		service.updateRoom(room);
 	}
 	
-	@DeleteMapping("/owner/delete/{id}")
+	@DeleteMapping("owner/delete/{id}")
 	public void deleteRoom(@PathVariable int id) {
 		service.deleteRoom(id);
 	}
 	
-	@GetMapping("/owner/getRoom/{id}")
+	@GetMapping("owner/getRoom/{id}")
 	public Room getRoom(@PathVariable int id) {
 		return service.getRoom(id).get();
 	}
 	
-	@GetMapping("/owner/getRooms")
+	@GetMapping("owner/getRooms")
 	public List<Room> getRooms() {
 		return service.getRooms();
 	}
